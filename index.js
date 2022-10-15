@@ -7,108 +7,111 @@ const questions = () =>
   inquirer.prompt([
     {
       type: "input",
-      name: "project",
-      message: "What is your project title?",
+      name: "employee1",
+      message: "What is the name of your first employee?",
     },
     {
       type: "input",
-      name: "description",
-      message: "What is a description of your project?",
+      name: "email1",
+      message: "What is the email of your first employee?",
     },
     {
       type: "input",
-      name: "install",
-      message: "What are the installation instructions for your project?",
+      name: "github1",
+      message: "What is the github profile for your first employee?",
     },
     {
       type: "input",
-      name: "use",
-      message: "What is the usage information for your project?",
+      name: "employee2",
+      message: "What is the name of your second employee?",
     },
     {
       type: "input",
-      name: "license",
-      message:
-        "What licensing are you utilizing for the project? (available choices: ISC, Mozilla, MIT)",
-      choices: ["ISC", "Mozilla", "MIT"],
+      name: "email2",
+      message: "What is the email of your second employee?",
     },
     {
       type: "input",
-      name: "contributing",
-      message: "What is the overview of contributing guidelines?",
+      name: "github2",
+      message: "What is the github profile of your second employee?",
     },
     {
       type: "input",
-      name: "contributing1",
-      message: "What is the Github flow for pull requests?",
+      name: "employee3",
+      message: "What is the name of your third employee?",
     },
     {
       type: "input",
-      name: "contributing2",
-      message: "What is the protocol for resolving bugs?",
+      name: "email3",
+      message: "What is the email of your third employee?",
     },
     {
       type: "input",
-      name: "tests",
-      message: "What are the test instructions for your project?",
+      name: "github3",
+      message: "What is the github profile of your third",
     },
     {
       type: "input",
-      name: "github",
-      message: "Enter your GitHub Username",
+      name: "employee4",
+      message: "What is the name of your fourth employee?",
     },
     {
       type: "input",
-      name: "email",
-      message: "Enter your email address.",
+      name: "email4",
+      message: "What is the email of your fourth employee?",
+    },
+    {
+      type: "input",
+      name: "github4",
+      message: "What is the github profile of your fourth employee?",
     },
   ]);
 
 questions()
-  .then((data) => writeFileWebpage("README.md", generateMD(data)))
+  .then((data) => writeFileWebpage("index.html", generateMD(data)))
   .then(() => console.log("completed"))
   .catch((err) => console.error(err));
 
 function generateMD(data) {
-  return `# ${data.project}
-## Description
-${data.description}
+  return `# ${data.employee1}
+## email1
+${data.email1}
 ## Table of Contents
 
-1. [Installation Guidelines](#installation-guidelines)
+1. [github1ation Guidelines](#github1ation-guidelines)
 2. [Usage](#usage)
-3. [License](#license)
-4. [Contributing to READMEGenerator](#contribute)
+3. [email2](#email2)
+4. [github2 to READMEGenerator](#contribute)
 5. [Github Flow for Pull Requests](#contribute1)
 6. [Resolving Bugs](#contribute2)
-7. [Testing](#tests)
+7. [Testing](#github4)
 8. [Questions](#questions)
 
 
 
 
-### Installation Guidelines <a id="installation-guidelines"></a>
-${data.install}
+### github1ation Guidelines <a id="github1ation-guidelines"></a>
+${data.github1}
 
 
-### Description
-${data.description}
+### email1
+${data.email1}
 ### Usage <a id="usage"></a>
-${data.use}
-### License <a id="license"></a>
-${data.license}
-[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
-### Contributing to READMEGenerator <a id="contribute"></a>
-${data.contributing}
+${data.employee2}
+### email2 <a id="email2"></a>
+${data.email2}
+[![email2: ISC](https://img.shields.io/badge/email2-ISC-blue.svg)](https://opensource.org/email2s/ISC)
+### github2 to READMEGenerator <a id="contribute"></a>
+${data.github2}
 ### Github Flow for Pull Requests <a id="contribute1"></a>
-${data.contributing1}
+${data.employee3}
 ### Resolving Bugs <a id="contribute2"></a>
-${data.contributing2}
-### Testing <a id="tests"></a>
-${data.tests}
+${data.email3}
+### Testing <a id="github4"></a>
+${data.github4}
 ### Questions <a id="questions"></a>
-Github Username: ${data.github}
-Email: ${data.email}
+Github employee2rname: ${data.github}
+Email: ${data.email4}
 `;
 }
 module.exports = generateMD;
